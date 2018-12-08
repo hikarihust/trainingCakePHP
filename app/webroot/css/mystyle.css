@@ -1,0 +1,12 @@
+h2{
+	color: orange;
+	font-weight: bold;
+}
+
+a{
+	text-decoration: none;
+}
+
+div.menu_actions{
+	margin-top: 20px;
+}
