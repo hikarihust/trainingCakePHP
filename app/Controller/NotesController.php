@@ -42,7 +42,7 @@ class NotesController extends AppController{
 		$this->Note->id = $id;
 		if ($this->Note->exists()) {
 			// pr($this->request->method());
-			if ($this->request->is('put')) {
+			if ($this->request->is('put') || $this->request->is('post')) {
 				if($this->Note->save($this->request->data)){
 					$this->Session->setFlash('Ghi chú đã được chỉnh sửa');
 					$this->redirect('/notes/index');

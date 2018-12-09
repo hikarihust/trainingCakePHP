@@ -3,6 +3,7 @@
 <?php 
 	echo $this->Form->create('Note');
 	// echo $this->Form->input('title', array('label' => 'Tựa đề'));
+	echo $this->Form->input('id');
 	echo $this->Form->input('title', array('label' => '', 'placeholder'=>'Tựa đề của ghi chú'));
 	// echo $this->Form->input('content', array('label' => 'Nội dung'));
 	echo $this->Form->input('content', array('label' => '', 'placeholder' => 'Nội dung ghi chú'));
