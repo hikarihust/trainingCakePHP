@@ -1,4 +1,4 @@
-<h2>Thêm ghi chú</h2>
+<h2>Sửa ghi chú</h2>
 
 <?php 
 	echo $this->Form->create('Note');
@@ -6,7 +6,7 @@
 	echo $this->Form->input('title', array('label' => '', 'placeholder'=>'Tựa đề của ghi chú'));
 	// echo $this->Form->input('content', array('label' => 'Nội dung'));
 	echo $this->Form->input('content', array('label' => '', 'placeholder' => 'Nội dung ghi chú'));
-	echo $this->Form->end('Save');
+	echo $this->Form->end('Update');
 ?>
 
 <div class="menu_actions">

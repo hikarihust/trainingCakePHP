@@ -37,4 +37,23 @@ class NotesController extends AppController{
 			}
 		}
 	}
+
+	public function edit($id = null){
+		$this->Note->id = $id;
+		if ($this->Note->exists()) {
+			// pr($this->request->method());
+			if ($this->request->is('put')) {
+				if($this->Note->save($this->request->data)){
+					$this->Session->setFlash('Ghi chú đã được chỉnh sửa');
+					$this->redirect('/notes/index');
+				}else{
+					$this->Session->setFlash('Có lỗi xảy ra và ghi chú chưa được chỉnh sửa!');
+				}
+			}else{
+				$this->request->data = $this->Note->read(null, $id);
+			}
+		}else{
+			throw new NotFoundException("Không tìm thấy ghi chú này!");
+		}
+	}
 }

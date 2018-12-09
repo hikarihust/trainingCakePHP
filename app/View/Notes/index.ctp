@@ -2,7 +2,8 @@
 <ul>
  <?php foreach ($notes as $note):?>
  	<li>
- 		<?php  echo $this->Html->link($note['Note']['title'],'/notes/view/'.$note['Note']['id']);?>
+ 		<?= $this->Html->link($note['Note']['title'],'/notes/view/'.$note['Note']['id']) ?> | 
+ 		<?= $this->Html->link('Sửa', '/notes/edit/'.$note['Note']['id'], array('class' => 'inline_action' )) ?>
  	</li>
  <?php endforeach; ?>
  

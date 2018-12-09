@@ -8,5 +8,6 @@
 </small>
 
 <div class="menu_actions">
-	<?php echo $this->Html->link('Quay về trang chính', '/notes/index'); ?>
+	<?= $this->Html->link('Quay về trang chính', '/notes/index'); ?> <br/>
+	<?= $this->Html->link('Sửa ghi chú', '/notes/edit/'.$note['Note']['id']); ?>
 </div>
