@@ -1,0 +1,8 @@
+1. Notice (1024): Element Not Found: Elements\default.ctp [CORE\Cake\View\View.php, line 425
+
+	Copy  default.ctp file from this directory in your computer in CakePHP setup folder
+
+	htdocs/cake/lib/Cake/View/Elements/Flash
+	and paste copy of default.ctp file outside Flash folder in Elements Folder. at this location
+
+	htdocs/cake/lib/Cake/View/Elements
