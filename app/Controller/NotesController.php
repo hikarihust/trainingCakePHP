@@ -56,4 +56,22 @@ class NotesController extends AppController{
 			throw new NotFoundException("Không tìm thấy ghi chú này!");
 		}
 	}
+
+	public function delete($id = null){
+		if ($this->request->is('post')) {
+			$this->Note->id = $id;
+			if ($this->Note->exists()) {
+				if($this->Note->delete($id)){
+					$this->Session->setFlash('Đã xóa ghi chú!');
+					$this->redirect('/notes/index');
+				}else{
+					$this->Session->setFlash('Có lỗi xảy ra và chưa xóa ghi chú được!');
+				}
+			}else{
+				throw new NotFoundException("Không tìm thấy ghi chú này");
+			}
+		}else{
+			throw new MethodNotAllowedException('Yêu cầu không được chấp thuận!');
+		}
+	}
 }

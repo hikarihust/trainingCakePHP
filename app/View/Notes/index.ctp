@@ -3,7 +3,8 @@
  <?php foreach ($notes as $note):?>
  	<li>
  		<?= $this->Html->link($note['Note']['title'],'/notes/view/'.$note['Note']['id']) ?> | 
- 		<?= $this->Html->link('Sửa', '/notes/edit/'.$note['Note']['id'], array('class' => 'inline_action' )) ?>
+ 		<?= $this->Html->link('Sửa', '/notes/edit/'.$note['Note']['id'], array('class' => 'inline_action' )) ?> |
+ 		<?= $this->Form->postlink('Xóa', '/notes/delete/'.$note['Note']['id'], array('class'=>'inline_action', 'confirm'=>'Bạn có chắc chắn muốn xóa ghi chú này hay không?')) ?>
  	</li>
  <?php endforeach; ?>
  
