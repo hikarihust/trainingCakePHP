@@ -16,11 +16,12 @@
 ?>
 <h2><?php echo $message; ?></h2>
 <p class="error">
-	<strong><?php echo __d('cake', 'Error'); ?>: </strong>
+	<strong><?php echo __d('cake', 'Lỗi'); ?>: </strong>
 	<?php printf(
-		__d('cake', 'The requested address %s was not found on this server.'),
+		__d('cake', 'Bạn đã yêu cầu địa chỉ %s và nó không tồn tại trên server.'),
 		"<strong>'{$url}'</strong>"
 	); ?>
+	<?= $this->Html->link('Quay về trang chính', '/')  ?>
 </p>
 <?php
 if (Configure::read('debug') > 0):

@@ -21,7 +21,7 @@ class NotesController extends AppController{
 			$note = $this->Note->read(null, $id);
 			$this->set('note', $note);
 		}else{
-			throw new NotFoundException("Không tìm thấy ghi chú này", 1);
+			throw new NotFoundException("Không tìm thấy ghi chú này");
 		}
 	}
 
