@@ -29,12 +29,20 @@ class NotesController extends AppController{
 		if ($this->request->is('post')) {
 			// pr($this->request->data);
 			// pr($this->request->method());
-			if($this->Note->save($this->request->data)){
-				$this->Session->setFlash('Ghi chú đã được lưu lại');
-				$this->redirect('/notes/index');
+			$this->Note->set($this->request->data);
+			if($this->Note->validates()){
+				if($this->Note->save($this->request->data, false)){
+					$this->Session->setFlash('Ghi chú đã được lưu lại');
+					$this->redirect('/notes/index');
+				}else{
+					$this->Session->setFlash('Có lỗi xảy ra và ghi chú của bạn chưa được lưu lại!');
+				}
 			}else{
-				$this->Session->set('Có lỗi xảy ra và ghi chú của bạn chưa được lưu lại!');
+			    // didn't validate logic
+			    $errors = $this->Note->validationErrors;
+			    $this->set('errors', $errors);
 			}
+
 		}
 	}
 
