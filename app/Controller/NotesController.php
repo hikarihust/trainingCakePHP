@@ -33,7 +33,7 @@ class NotesController extends AppController{
 			if($this->Note->validates()){
 				if($this->Note->save($this->request->data, false)){
 					$this->Session->setFlash('Ghi chú đã được lưu lại');
-					$this->redirect('/notes/index');
+					$this->redirect('/');
 				}else{
 					$this->Session->setFlash('Có lỗi xảy ra và ghi chú của bạn chưa được lưu lại!');
 				}
@@ -53,7 +53,7 @@ class NotesController extends AppController{
 			if ($this->request->is('put') || $this->request->is('post')) {
 				if($this->Note->save($this->request->data)){
 					$this->Session->setFlash('Ghi chú đã được chỉnh sửa');
-					$this->redirect('/notes/index');
+					$this->redirect('/');
 				}else{
 					$this->Session->setFlash('Có lỗi xảy ra và ghi chú chưa được chỉnh sửa!');
 				}
@@ -71,7 +71,7 @@ class NotesController extends AppController{
 			if ($this->Note->exists()) {
 				if($this->Note->delete($id)){
 					$this->Session->setFlash('Đã xóa ghi chú!');
-					$this->redirect('/notes/index');
+					$this->redirect('/');
 				}else{
 					$this->Session->setFlash('Có lỗi xảy ra và chưa xóa ghi chú được!');
 				}

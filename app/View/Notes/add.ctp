@@ -20,5 +20,5 @@
 ?>
 
 <div class="menu_actions">
-	<?= $this->Html->link('Quay về trang chính', '/notes/index') ?>
+	<?= $this->Html->link('Quay về trang chính', '/') ?>
 </div>

@@ -8,7 +8,7 @@
 </small>
 
 <div class="menu_actions">
-	<?= $this->Html->link('Quay về trang chính', '/notes/index'); ?> |
-	<?= $this->Html->link('Sửa ghi chú', '/notes/edit/'.$note['Note']['id']); ?> |
+	<?= $this->Html->link('Quay về trang chính', '/'); ?> |
+	<?= $this->Html->link('Sửa ghi chú', '/edit-note/'.$note['Note']['id']); ?> |
 	<?= $this->Form->postlink('Xóa ghi chú', '/notes/delete/'.$note['Note']['id'], null, 'Bạn có chắc chắn muốn xóa ghi chú này hay không?') ?>
 </div>
