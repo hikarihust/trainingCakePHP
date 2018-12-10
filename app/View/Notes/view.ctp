@@ -1,6 +1,6 @@
-<h2> <?php echo $note['Note']['title']; ?> </h2>
+<h2> <?php echo h($note['Note']['title']); ?> </h2>
 
-<p><?php echo str_replace("\n", "<br/>", $note['Note']['content']); ?></p>
+<p><?php echo str_replace("\n", "<br/>", h($note['Note']['content'])); ?></p>
 
 <small> 
 		Ngày tạo: <?php echo date("d-m-Y H:i:s", strtotime($note['Note']['created'])); ?> <br/>
